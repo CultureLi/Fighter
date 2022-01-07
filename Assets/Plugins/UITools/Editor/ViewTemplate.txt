@@ -1,0 +1,15 @@
+$Tips$
+using UnityEngine;
+
+namespace UIFrameWork
+{
+	public class $VIEWNAME$
+	{
+$VIEWDECLARE$
+
+		public $VIEWNAME$(UIExporter exporter)
+		{
+$VIEWDEFINATE$
+		}
+	}
+}
