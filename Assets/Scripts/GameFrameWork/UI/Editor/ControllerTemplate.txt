@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UIFrameWork
+namespace GameFrameWork.UI
 {
-    public class $VIEWNAME$Controller : BaseViewController
+    public class $VIEWNAME$Controller : ViewControllerBase
     {
         private $VIEWNAME$ view;
 

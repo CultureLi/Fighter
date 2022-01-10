@@ -7,7 +7,7 @@ using System.Text;
 using UnityEngine.UI;
 using System.Linq;
 
-namespace UIFrameWork
+namespace GameFrameWork.UI
 {
     [CustomEditor(typeof(UIAutoGeneratorEditor))]
     public class UIAutoGeneratorEditor : Editor
@@ -65,14 +65,14 @@ namespace UIFrameWork
             AutoGenViewController(view);
         }
         private static void AutoGenViewController(GameObject view)
-        {      
+        {
             string filePath = Application.dataPath + "/Scripts/UI/Controller/" + view.name + "Controller.cs";
 
-            if (Directory.Exists(filePath))
+            if (File.Exists(filePath))
             {
                 return;
             }
-            string controllerTemplate = File.ReadAllText(Application.dataPath + "/Plugins/UITools/Editor/ControllerTemplate.txt");
+            string controllerTemplate = File.ReadAllText(Application.dataPath + "/Scripts/GameFrameWork/UI/Editor/ControllerTemplate.txt");
             controllerTemplate = controllerTemplate.Replace("$VIEWNAME$", view.name);
 
             File.WriteAllText(filePath, controllerTemplate, new UTF8Encoding(false));
@@ -82,10 +82,10 @@ namespace UIFrameWork
         private static void AutoGenView(GameObject view)
         {
             string filePath = Application.dataPath + "/Scripts/UI/View/" + view.name + ".cs";
-            string viewTemplate = File.ReadAllText(Application.dataPath + "/Plugins/UITools/Editor/ViewTemplate.txt");
+            string viewTemplate = File.ReadAllText(Application.dataPath + "/Scripts/GameFrameWork/UI/Editor/ViewTemplate.txt");
             var exporter = view.GetComponent<UIExporter>();
 
-            var allUI = view.GetComponentsInChildren<Transform>(true);
+            var allUI = view.GetComponentsInChildren<RectTransform>(true);
 
             var newSet = new HashSet<Component>();
             //查找命名后缀符合规范的ui,和components中已有的合并
@@ -101,7 +101,7 @@ namespace UIFrameWork
             {
                 if(ui != null)
                 {
-                    newSet.Add(ui);
+                    newSet.Add(ui.gameObject.GetComponent<RectTransform>());
                 }
             }
 
@@ -128,7 +128,10 @@ namespace UIFrameWork
                 {
                     viewDeclare.AppendFormat("\t\tpublic {0} {1};\r\n", comType, ui.name);
                     viewDefinate.AppendFormat("\t\t\t{0} = exporter.Get<{1}>({2});\r\n", ui.name, comType, index);
+
+                    exporter.components[index] = ui.GetComponent(comType);
                 }
+                
             }
 
 

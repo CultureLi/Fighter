@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &84082076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 64949111247297590, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-  m_PrefabInstance: {fileID: 64949111331070378}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &84082081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84082076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc521e385fda7f94fa8f24f8431f88a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  components: []
 --- !u!1 &419284474
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,43 +410,15 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &64949111331070378
+--- !u!1001 &8246063367239473244
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 64949110098573718, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_Name
-      value: PassInputField
-      objectReference: {fileID: 0}
-    - target: {fileID: 64949110204421706, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64949110204421706, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64949110204421706, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 64949110210234317, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_Name
-      value: AccInputField
-      objectReference: {fileID: 0}
-    - target: {fileID: 64949110574217522, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_Name
-      value: AccInputText
-      objectReference: {fileID: 0}
-    - target: {fileID: 64949111072846277, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
-      propertyPath: m_Name
-      value: PassInputText
-      objectReference: {fileID: 0}
     - target: {fileID: 64949111247297546, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -475,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 64949111247297546, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 64949111247297546, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
       propertyPath: m_AnchorMax.x
@@ -552,6 +506,14 @@ PrefabInstance:
     - target: {fileID: 64949111247297590, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
       propertyPath: m_Name
       value: LoginView
+      objectReference: {fileID: 0}
+    - target: {fileID: 842997615906222195, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
+      propertyPath: components.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007632452622273475, guid: e37be74bab15e8948a01a3efa461a252, type: 3}
+      propertyPath: m_Name
+      value: EmptyGO
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37be74bab15e8948a01a3efa461a252, type: 3}

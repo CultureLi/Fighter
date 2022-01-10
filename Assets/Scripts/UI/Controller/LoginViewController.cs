@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UIFrameWork
+namespace GameFrameWork.UI
 {
-    public class LoginViewController : BaseViewController
+    public class LoginViewController : ViewControllerBase
     {
         private LoginView view;
 
@@ -12,6 +12,13 @@ namespace UIFrameWork
         {
             base.Init(args);
             view = new LoginView(exporter);
+            BindUIEvent(view.LogInBtn.gameObject, UIEventTrigger.UIEventType.Click,OnBgnClick);
+        }
+
+        public void OnBgnClick()
+        {
+            Debug.Log("rrrrrrrrr");
+            UnbindUIEvent(view.LogInBtn.gameObject, UIEventTrigger.UIEventType.Click, OnBgnClick);
         }
 
         protected override void OnOpen(params object[] args)
